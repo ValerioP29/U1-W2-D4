@@ -116,7 +116,16 @@ console.log("VIDEOCASSETTA AL CONTARIO:", reverseString("VIDEOCASSETTA"));
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
 */
-
+function upperFirst(str) {
+  return str
+    .split(" ") // Dividi la stringa in un array di parole
+    .map((word) => {
+      // Rendi maiuscola la prima lettera e unisci con il resto della parola
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" "); // Riunisci le parole in una stringa separata da spazi
+}
+console.log(upperFirst("ciao mamma guarda come mi diverto"));
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 9
@@ -125,9 +134,21 @@ console.log("VIDEOCASSETTA AL CONTARIO:", reverseString("VIDEOCASSETTA"));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function cutString(stringa) {
+  return stringa.slice(1, -1);
+}
+console.log(cutString("non si vede ne la prima ne l'ultima lettera"));
 
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+function giveMeRandom(n) {
+  const random = [];
+  for (let i = 0; i < n; i++) {
+    const numberRandoms = Math.floor(Math.random() * 11);
+    random.push(numberRandoms);
+  }
+  return random;
+}
+console.log(giveMeRandom(10));
